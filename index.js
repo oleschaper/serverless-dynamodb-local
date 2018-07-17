@@ -273,6 +273,9 @@ class ServerlessDynamodbLocal {
               migration.SSESpecification.Enabled = migration.SSESpecification.SSEEnabled;
               delete migration.SSESpecification.SSEEnabled;
             }
+            if (migration.PointInTimeRecoverySpecification) {
+              delete migration.PointInTimeRecoverySpecification;
+            }		
             if (migration.Tags) {
                 delete migration.Tags;
             }
